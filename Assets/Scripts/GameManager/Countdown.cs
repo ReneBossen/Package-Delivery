@@ -4,7 +4,7 @@ using UnityEngine;
 public class Countdown : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
-    private float timer = 30;
+    [SerializeField] private float timer = 120;
     private readonly int timeBonus = 7;
 
     void Update()

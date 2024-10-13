@@ -5,12 +5,12 @@ public class Delivery : MonoBehaviour
 {
     private bool hasPackage;
 
-    [SerializeField] Color32 hasPackageColor = new Color32(1, 1, 1, 1);
-    [SerializeField] Color32 hasNoPackageColor = new Color32(1, 1, 1, 1);
-    [SerializeField] float DestroyDelay = 0.3f;
-    [SerializeField] Countdown timerManager;
+    [SerializeField] private Sprite hasPackageSprite;
+    [SerializeField] private Sprite hasNoPackageSprite;
+    [SerializeField] private float DestroyDelay = 0.3f;
+    [SerializeField] private Countdown timerManager;
 
-    SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class Delivery : MonoBehaviour
             Spawner.Instance.ClearPackageSpawnPointPosition(spawnPositionNumber);
 
             hasPackage = true;
-            spriteRenderer.color = hasPackageColor;
+            spriteRenderer.sprite = hasPackageSprite;
 
             Destroy(collision.gameObject, DestroyDelay);
         }
@@ -40,7 +40,7 @@ public class Delivery : MonoBehaviour
             Spawner.Instance.ClearCostumerSpawnPointPosition(spawnPositionNumber);
 
             hasPackage = false;
-            spriteRenderer.color = hasNoPackageColor;
+            spriteRenderer.sprite = hasNoPackageSprite;
             timerManager.AddTime();
 
             Destroy(collision.gameObject, DestroyDelay);

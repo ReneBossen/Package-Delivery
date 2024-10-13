@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
         int spawnPointNumber = GetRandomSpawnPoint(packageSpawnPoints);
         Vector3 spawnPosition = new(packageSpawnPoints[spawnPointNumber].position.x, packageSpawnPoints[spawnPointNumber].position.y, 0);
 
-        GameObject spawnedObject = Instantiate(packagePrefab, spawnPosition, Quaternion.identity, packageParent);
+        GameObject spawnedObject = Instantiate(packagePrefab, spawnPosition, packageSpawnPoints[spawnPointNumber].rotation, packageParent);
         spawnedObject.GetComponent<ObjectNumber>().SetSpawnPositionNumber(spawnPointNumber);
     }
     private void SpawnPackage()
@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
         int spawnPointNumber = GetRandomSpawnPoint(packageSpawnPoints);
         Vector3 spawnPosition = new(packageSpawnPoints[spawnPointNumber].position.x, packageSpawnPoints[spawnPointNumber].position.y, 0);
 
-        GameObject spawnedObject = Instantiate(packagePrefab, spawnPosition, Quaternion.identity, packageParent);
+        GameObject spawnedObject = Instantiate(packagePrefab, spawnPosition, packageSpawnPoints[spawnPointNumber].rotation, packageParent);
         spawnedObject.GetComponent<ObjectNumber>().SetSpawnPositionNumber(spawnPointNumber);
     }
 
@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour
         int spawnPointNumber = GetRandomSpawnPoint(costumerSpawnPoints);
         Vector3 spawnPosition = new(costumerSpawnPoints[spawnPointNumber].position.x, costumerSpawnPoints[spawnPointNumber].position.y, 0);
 
-        GameObject spawnedObject = Instantiate(costumerPrefab, spawnPosition, Quaternion.identity, costumerParent);
+        GameObject spawnedObject = Instantiate(costumerPrefab, spawnPosition, costumerSpawnPoints[spawnPointNumber].rotation, costumerParent);
         spawnedObject.GetComponent<ObjectNumber>().SetSpawnPositionNumber(spawnPointNumber);
     }
 
@@ -60,7 +60,7 @@ public class Spawner : MonoBehaviour
         int spawnPointNumber = GetRandomSpawnPoint(costumerSpawnPoints);
         Vector3 spawnPosition = new(costumerSpawnPoints[spawnPointNumber].position.x, costumerSpawnPoints[spawnPointNumber].position.y, 0);
 
-        GameObject spawnedObject = Instantiate(costumerPrefab, spawnPosition, Quaternion.identity, costumerParent);
+        GameObject spawnedObject = Instantiate(costumerPrefab, spawnPosition, costumerSpawnPoints[spawnPointNumber].rotation, costumerParent);
         spawnedObject.GetComponent<ObjectNumber>().SetSpawnPositionNumber(spawnPointNumber);
     }
 
@@ -69,7 +69,7 @@ public class Spawner : MonoBehaviour
         int spawnPointNumber = GetRandomSpawnPoint(speedUpSpawnPoints);
         Vector3 spawnPosition = new(speedUpSpawnPoints[spawnPointNumber].position.x, speedUpSpawnPoints[spawnPointNumber].position.y, 0);
 
-        GameObject spawnedObject = Instantiate(speedUpPrefab, spawnPosition, Quaternion.identity, speedUpParent);
+        GameObject spawnedObject = Instantiate(speedUpPrefab, spawnPosition, speedUpSpawnPoints[spawnPointNumber].rotation, speedUpParent);
         spawnedObject.GetComponent<ObjectNumber>().SetSpawnPositionNumber(spawnPointNumber);
     }
 
@@ -78,7 +78,7 @@ public class Spawner : MonoBehaviour
         int spawnPointNumber = GetRandomSpawnPoint(speedUpSpawnPoints);
         Vector3 spawnPosition = new(speedUpSpawnPoints[spawnPointNumber].position.x, speedUpSpawnPoints[spawnPointNumber].position.y, 0);
 
-        GameObject spawnedObject = Instantiate(speedUpPrefab, spawnPosition, Quaternion.identity, speedUpParent);
+        GameObject spawnedObject = Instantiate(speedUpPrefab, spawnPosition, speedUpSpawnPoints[spawnPointNumber].rotation, speedUpParent);
         spawnedObject.GetComponent<ObjectNumber>().SetSpawnPositionNumber(spawnPointNumber);
     }
     private int GetRandomSpawnPoint(List<Transform> spawnPoints)
